@@ -13,4 +13,4 @@ while(n > 0):
         print("encaixa")
     else:
         print("nao encaixa")
-    n = n -1
+    n = n -1    
