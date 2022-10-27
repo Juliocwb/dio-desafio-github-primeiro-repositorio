@@ -126,7 +126,7 @@ ax4.plot(confirmados.index, res.resid)
 ax4.axhline(0, linestyle = 'dashed', c='black')
 plt.show()
 
-!pip install pmdarima
+pip install pmdarima
 
 from pmdarima.arima import auto_arima
 modelo = auto_arima(confirmados)
@@ -146,5 +146,5 @@ fig.add_trace(go.Scatter(
 fig.update_layout(title="Preveisao de casos confirmado no brasil para proximos 600 dias")
 fig.show()
 
-!conda install -c conda-forge fbprophet -y
+conda install -c conda-forge fbprophet -y
 
