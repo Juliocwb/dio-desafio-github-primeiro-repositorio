@@ -6,10 +6,10 @@ from sqlalchemy import String
 from sqlalchemy import ForeignKey
 
 
-base = declarative_base()
+Base = declarative_base()
 
 
-class User(Bae):
+class User(Base):
     __tablename__ = "user_acount"
 
     id = Column(Integer, primary_key=True)
@@ -24,7 +24,8 @@ class User(Bae):
         return f"User(id={self.id}, name={self.name}, fullname={self.fullname})"
 
 class Adrress(Base):
-    id = Column(Integer, primary_key=True, auto_increment=True)
+    __tablename__ = "address"
+    id = Column(Integer, primary_key=True)
     email_address = Column(String(30),nullable=False)
     user_id = Column(Integer, ForeignKey("User_account.id"), nullable=False)
 
@@ -35,3 +36,4 @@ class Adrress(Base):
         return  f"Address (id={self.id}, email={self.email_address})"
 
 print(User.__tablename__)
+print(Adrress.__table__)
